@@ -85,4 +85,49 @@ def create_zigzag(rows, cols, start=1):
     return grid
 
 
-def contains_bingo(card, numbers, centerfree=True)
+def contains_bingo(card, numbers, centerfree=True):
+    rows = []
+
+    for x in range(5):
+        # Diagonals
+        h_row = []
+        v_row = []
+
+        for y in range(5):
+            if x == y == 2 and centerfree:
+                continue
+
+            h_row.append(card[x][y])
+            v_row.append(card[y][x])
+
+    # Diagonals
+    for i in range(5):
+
+
+    for row in rows:
+        if set(row).issubset(numbers):
+            return True
+
+    return False
+
+
+c = [
+    [38, 93, 42, 47, 15],
+    [90, 13, 41, 10, 56],
+    [54, 23, 87, 70, 6],
+    [86, 43, 48, 40, 92],
+    [71, 24, 44, 1, 34]
+]
+
+n = [
+    1, 2, 3, 4, 6, 8, 12,
+    13, 15, 16, 19, 21, 22,
+    24, 28, 34, 38, 40, 41,
+    42, 43, 45, 47, 49, 51,
+    53, 55, 57, 58, 62, 65,
+    66, 69, 70, 72, 82, 83,
+    84, 86, 88, 95, 97
+]
+
+
+print(contains_bingo(c, n))
