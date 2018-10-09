@@ -174,6 +174,9 @@ def detab(text, n=8, sub=' '):
 
 
 def reverse_ascending_sublists(items):
+    """
+    Refactor maybe?
+    """
     cur = 0
 
     for i, item in enumerate(items):
@@ -182,3 +185,37 @@ def reverse_ascending_sublists(items):
             cur = i + 1
 
     return items
+
+
+def hand_is_badugi(hand):
+    all_items = [item for card in hand for item in card]
+
+    return len(set(all_items)) == len(all_items)
+
+
+def brangelina(first, second):
+    """
+    TODO
+    """
+    import re
+
+    first_groups = re.split('[aeiou]+', first)
+    second_groups = re.split('[aeiou]+', second)
+
+    return first_groups, second_groups
+
+
+def sort_by_digit_count(items):
+    collection = []
+
+    for item in items:
+        nums = ''.join([str(c) for c in set(str(item))])
+        collection.append(nums)
+
+    print(sorted(collection))
+#    return collection
+
+if __name__ == '__main__':
+    print(sort_by_digit_count([98, 19, 4321, 9999, 73, 241, 111111, 563, 33]))
+    print(sort_by_digit_count([1234, 4321, 3214, 1243]))
+    print(sort_by_digit_count(list(range(100000))))
