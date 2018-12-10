@@ -1,17 +1,34 @@
-# def ryerson_letter_grade(pct):
-#     """
-#     TODO
-#     """
-#     if 0 < pct < 50:
-#         return 'F'
-#     elif pct <= 59:
-#         return 'D'
-#     elif pct <= 69:
-#         return 'C'
-#     elif pct <= 79:
-#         return 'B'
-#     elif pct <= 100:
-#         return 'A'
+def ryerson_letter_grade(pct): 
+    
+    if pct>=0 and pct<=49:
+        return('F')
+    elif pct>=50 and pct<=52:
+        return('D-')
+    elif(pct>=53 and pct<=56):
+        return('D')
+    elif(pct>=57 and pct<=59):
+        return('D+')
+    elif(pct>=60 and pct<=62):
+        return('C-')
+    elif(pct>=63 and pct<=66):
+        return('C')
+    elif(pct>=67 and pct<=69):
+        return('C+')
+    elif(pct>=70 and pct<=72):
+        return('B-')
+    elif(pct>=73 and pct<=76):
+        return('B')
+    elif(pct>=77 and pct<=79):
+        return('B+')
+    elif(pct>=80 and pct<=84):
+        return('A-')
+    elif(pct>=85 and pct<=89):
+        return('A')
+    elif(pct>=90 and pct<=150):
+        return('A+')
+    elif(pct>150):
+        return('not in range')
+    #Edit by BrownMamba*
 
 
 def is_ascending(items):
